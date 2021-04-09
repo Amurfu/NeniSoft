@@ -63,7 +63,7 @@ namespace SimiSoft
             this.btnCancelar.Location = new System.Drawing.Point(190, 136);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -120,7 +120,7 @@ namespace SimiSoft
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(68, 13);
             this.labelControl4.TabIndex = 11;
-            this.labelControl4.Text = "Tipo de envio:";
+            this.labelControl4.Text = "Tipo de envió:";
             // 
             // dtFecha
             // 

@@ -89,15 +89,15 @@ namespace SimiSoft
             // 
             this.labelControl3.Location = new System.Drawing.Point(44, 64);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(74, 13);
+            this.labelControl3.Size = new System.Drawing.Size(89, 13);
             this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Unidad Medida:";
+            this.labelControl3.Text = "Unidad de medida:";
             // 
             // txtUnidadMedida
             // 
-            this.txtUnidadMedida.Location = new System.Drawing.Point(124, 61);
+            this.txtUnidadMedida.Location = new System.Drawing.Point(139, 61);
             this.txtUnidadMedida.Name = "txtUnidadMedida";
-            this.txtUnidadMedida.Size = new System.Drawing.Size(100, 20);
+            this.txtUnidadMedida.Size = new System.Drawing.Size(85, 20);
             this.txtUnidadMedida.TabIndex = 1;
             // 
             // labelControl4
