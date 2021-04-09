@@ -235,7 +235,7 @@ namespace SimiSoft
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmVentas.IconOptions.Image")));
             this.Name = "frmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVenta";
+            this.Text = "Ventas";
             this.Load += new System.EventHandler(this.frmProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
