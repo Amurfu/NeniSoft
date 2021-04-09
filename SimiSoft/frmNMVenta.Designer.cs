@@ -29,6 +29,7 @@ namespace SimiSoft
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNMVenta));
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.lblFecha = new DevExpress.XtraEditors.LabelControl();
@@ -171,6 +172,7 @@ namespace SimiSoft
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNMVenta.IconOptions.Image")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNMVenta";

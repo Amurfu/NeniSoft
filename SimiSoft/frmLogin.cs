@@ -66,5 +66,20 @@ namespace SimiSoft
         {
 			Close();
         }
+
+       // private void checkButton1_Click(object sender, EventArgs e)
+        //{
+			//String text = txtPassword.Text;
+           // if (checkButton1.Checked)
+          //  {
+				
+				//txtPassword.Text = text;
+
+			//}
+			//else
+			//{
+			//	txtPassword.Properties.PasswordChar = '*';
+			//}
+		//}
     }
 }

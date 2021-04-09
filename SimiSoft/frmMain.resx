@@ -121,6 +121,31 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="frmMain.IconOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAARlSURBVHhe7ZpPaFxVFMZnI64FV1ZJaWhJW7XFiU2bTCfTSKU1lkqtxWJsY4tBTVoQBBFpVWgz
+        wUYrEYRo/YMigiBSqgb8ryS66UI3XQdtbCxUuuuun/eU716mL3Pm5cy8l8zA+8GPme/cc++5s5jwQpLL
+        yMjIyMhoHvJDuOWOoyivOIJZJ2KcXTGCUdnD7a3PnSMoO2HxrmGc5PbWZ+Uw5pxYOYISSyptI+iT3rZh
+        /M1S69P+LCAyxmLtb3rWPAOIjLFY+5uedUOAyBiLtb/puedpQGSMxdrf9Gw8DIiMsVj7m57OQ4DIGIu1
+        34w8ZHQNouycdWKp5PhctTWRy9r6bNfBhB6Qeg6g3HMQWGo5PldtTeSyun7DwQQekIoHMFd8EigNxD+Y
+        JIHMEhljqdbvch/rjT8gbRsARMbUsc7T+q3nqGx/AhAZU8c6T+u3nqOyYz8gMqaOdZ7Wbz1Hpf9xYDnk
+        +DCfUc2abKuf3fuA5ZDjw3xGNWuyrX72PAaIjKkTnWfNHq1uZt+jgMiYOtF51uzR6mb27wFExtSJzrNm
+        j1Y3M/AIIDKmTnSeNXu0upnB3YDImDrRedbs0epmDu8CRMbUic6zZo9WNzP0MCAyBnxdk22L7vNE69bs
+        0epmnusHRMaAr2uybdF9nmjdmj1a3cyRnYDImDrRedbs0epmnt8BiIypE51nzR6tbuaFBwGRMfDSNH5y
+        QvEHtoX9mmwLaHWNpM5ReXE7IDIGxn8Gasm2sF+TbQGtrpHUOSovPwCIjIEPvwdqyTYz2jwNrd96jsrx
+        PkBkDJydAmrJNjN+3rFtyLvXMedvznnnf1Tez7zShzJ7qt5Pq5t5rQSIjIHpc0At2Rb2a7ItUK1nMXJ7
+        QKubOdkLiIyBC18CtWRb2K/JtkDF2j/OYydKKLxawu3lAm4T5f1oL7Y6j5/oxSXfz+0BrW5mrAiIjKlT
+        LuJPznyfJZWxrfjgRm8v/mApkNi9xwvup7qTMXVe70a7m3dVZp4q4CmWF/BGAYd4tyvj3WhjOcC1xu99
+        ugcQGQO+3qg87iZOd2OvrL3Vg2vug25gOSA1WXM9198sYBfLN1HrfBMTWwCRMeDrjcrjFjCxGe+yZ/7t
+        LbjgXi+LfD8va+79JNsXIOsiY/28sxkQGZeMiZ241c097+dX8ffJvP63P9/HWD+TmwCRcUlxH7Ddzb7q
+        71DhlTNVvveV+F7G+jlzPyAyBny9UXmcynud2BvZc91Z9Xtfie9nrJ+P8oDIGPD1RuVxNXF94xV7TrFc
+        E9/PWD+f3AeIjMvGx3l0fdqJTYyxJHbvzzYCImPLkNi9P98AiIwtQ2L3/uJeQGRsGRK799m73a+3TsaW
+        IbF7f7Uel5w4tx4Flpqer9eiKHd2zrFUP1PrUJ5aC7Si33Qk8E9S593j5ncdKDsvO9Ei/vttB0bl7vwY
+        yfDjGkBkbDpSv98vq3Hx19VAk/sXr5s8M6vQP9OOOSea1IvTq/AQr5uRkZGRkVGTXO5/Ny8S/Hjs5KoA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="frmMain.IconOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
