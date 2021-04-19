@@ -71,6 +71,7 @@ namespace SimiSoft
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // labelControl4
             // 
@@ -101,6 +102,7 @@ namespace SimiSoft
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // labelControl2
             // 
@@ -150,6 +152,7 @@ namespace SimiSoft
             this.Name = "frmNMCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNMCliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNMCliente_FormClosing);
             this.Load += new System.EventHandler(this.frmNMCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefono.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();

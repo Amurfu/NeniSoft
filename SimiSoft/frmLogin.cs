@@ -67,19 +67,31 @@ namespace SimiSoft
 			Close();
         }
 
-       // private void checkButton1_Click(object sender, EventArgs e)
-        //{
-			//String text = txtPassword.Text;
-           // if (checkButton1.Checked)
-          //  {
-				
-				//txtPassword.Text = text;
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
 
-			//}
-			//else
-			//{
-			//	txtPassword.Properties.PasswordChar = '*';
-			//}
-		//}
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+			
+		}
+
+     
+
+        // private void checkButton1_Click(object sender, EventArgs e)
+        //{
+        //String text = txtPassword.Text;
+        // if (checkButton1.Checked)
+        //  {
+
+        //txtPassword.Text = text;
+
+        //}
+        //else
+        //{
+        //	txtPassword.Properties.PasswordChar = '*';
+        //}
+        //}
     }
 }

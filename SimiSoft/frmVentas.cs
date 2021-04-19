@@ -60,5 +60,7 @@ namespace SimiSoft
             ventaBindingSource.DataSource = new Venta().GetAll();
             gvVenta.BestFitColumns();
         }
+
+     
     }
 }

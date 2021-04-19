@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace SimiSoft
         private Venta venta;
         public frmNMVenta()
         {
-           
+
             InitializeComponent();
         }
 
@@ -29,27 +30,30 @@ namespace SimiSoft
                 idVenta = idVenta
             }.GetById();
             txtId.Text = venta.idVenta.ToString();
-            txtFecha.Text = venta.fecha.ToString();
+            dtFecha.Text = venta.fecha.ToString("MM / dd / yyyy");
             txtTotal.Text = venta.total.ToString();
-            txtTipo.Text = venta.tipoEnvio;
+            cbTipoE.Text = venta.tipoEnvio;
         }
 
         private void frmNMProveedor_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+           
+             
+          
+            }
+        
         private bool Validar()
         {
             var ban = false;
-            if (string.IsNullOrEmpty(txtFecha.Text))
+            if (string.IsNullOrEmpty(dtFecha.Text))
             {
-                txtFecha.ErrorText = "Ingresa la fecha";
-                txtFecha.Focus();
+                dtFecha.ErrorText = "Ingresa la fecha";
+                dtFecha.Focus();
                 ban = true;
             }
             if (string.IsNullOrEmpty(txtTotal.Text))
@@ -62,12 +66,12 @@ namespace SimiSoft
                 }
 
             }
-            if (string.IsNullOrEmpty(txtTipo.Text))
+            if (string.IsNullOrEmpty(cbTipoE.Text))
             {
-                txtTipo.ErrorText = "Ingresa un tipo de envio";
+                cbTipoE.ErrorText = "Ingresa un tipo de envio";
                 if (!ban)
                 {
-                    txtTipo.Focus();
+                    cbTipoE.Focus();
                     ban = true;
                 }
 
@@ -78,8 +82,7 @@ namespace SimiSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //txtFecha.Text =
-          //dtFecha.Value.ToString("MM/dd/yyyy");
+
             if (Validar())
             {
                 if (venta == null)
@@ -87,9 +90,9 @@ namespace SimiSoft
                     if (new Venta
                     {
 
-                        fecha = Convert.ToDateTime(txtFecha.Text),
+                        fecha = Convert.ToDateTime(dtFecha.Text),
                         total = Convert.ToDecimal(txtTotal.Text),
-                        tipoEnvio =txtTipo.Text
+                        tipoEnvio = cbTipoE.Text
                     }.Add() > 0)
                     {
                         XtraMessageBox.Show("Proveedor Insertado Correctamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,9 +106,9 @@ namespace SimiSoft
                 }
                 else
                 {
-                    venta.fecha = Convert.ToDateTime(txtFecha.Text);
+                    venta.fecha = Convert.ToDateTime(dtFecha.Text);
                     venta.total = Convert.ToDecimal(txtTotal.Text);
-                    venta.tipoEnvio = txtTipo.Text;
+                    venta.tipoEnvio = cbTipoE.Text;
 
                     if (venta.Update() > 0)
                     {
@@ -120,29 +123,72 @@ namespace SimiSoft
                 }
 
             }
-            
-        }
-
-     
-
-      
-
-        private void dtFecha_CloseUp(object sender, EventArgs e)
-        {
-            txtFecha.Text =
-       dtFecha.Value.ToString("MM/dd/yyyy");
-        }
-
-       
-
-        private void cbTipo_EditValueChanged(object sender, EventArgs e)
-        {
 
         }
-
-        private void cbTipoE_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        // public List<int> valores_permitidos = new List<int>() { 1,2,3,4,5,6,7,8,9,10,21, 13, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 46 };
+        private void txtTotal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtTipo.Text = cbTipoE.Text;
+            {
+                if (txtTotal.Text.Contains("."))
+                {
+                    if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(txtTotal.Text))
+                    {
+                        if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+                        {
+                            e.Handled = true;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        string n = Convert.ToString(txtTotal.Text.Length);
+                        int cant = Convert.ToInt32(n);
+                        if (cant == 4)
+                        {
+                            if (!char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                            {
+                                e.Handled = true;
+                            }
+                            else
+                            {
+                                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                                {
+                                    e.Handled = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+
+                            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                            {
+                                e.Handled = true;
+                            }
+                        }
+
+                    }
+                }
+            }
+            }
+
+        private void frmNMVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if( MessageBox.Show("Desea cerrar el formulario?",
+                                 "Salir",
+                                 MessageBoxButtons.OKCancel,
+                                 MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
     }
+
 }

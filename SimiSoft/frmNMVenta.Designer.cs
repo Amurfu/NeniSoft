@@ -37,16 +37,14 @@ namespace SimiSoft
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTipo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.txtFecha = new DevExpress.XtraEditors.TextEdit();
             this.cbTipoE = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.dtFecha = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipoE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -54,7 +52,7 @@ namespace SimiSoft
             this.btnGuardar.Location = new System.Drawing.Point(271, 136);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -64,7 +62,7 @@ namespace SimiSoft
             this.btnCancelar.Location = new System.Drawing.Point(190, 136);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -81,7 +79,8 @@ namespace SimiSoft
             this.txtTotal.Location = new System.Drawing.Point(457, 19);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 3;
+            this.txtTotal.TabIndex = 1;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // labelControl2
             // 
@@ -107,14 +106,6 @@ namespace SimiSoft
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "ID:";
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(457, 70);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(100, 20);
-            this.txtTipo.TabIndex = 4;
-            // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(383, 73);
@@ -123,34 +114,31 @@ namespace SimiSoft
             this.labelControl4.TabIndex = 11;
             this.labelControl4.Text = "Tipo de envió:";
             // 
-            // dtFecha
-            // 
-            this.dtFecha.Location = new System.Drawing.Point(216, 69);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(22, 21);
-            this.dtFecha.TabIndex = 2;
-            this.dtFecha.CloseUp += new System.EventHandler(this.dtFecha_CloseUp);
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Enabled = false;
-            this.txtFecha.Location = new System.Drawing.Point(110, 70);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(100, 20);
-            this.txtFecha.TabIndex = 1;
-            // 
             // cbTipoE
             // 
-            this.cbTipoE.Location = new System.Drawing.Point(563, 72);
+            this.cbTipoE.Location = new System.Drawing.Point(457, 70);
             this.cbTipoE.Name = "cbTipoE";
+            this.cbTipoE.Properties.AutoComplete = false;
             this.cbTipoE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTipoE.Properties.Items.AddRange(new object[] {
             "Paqueteria",
             "Presencial"});
-            this.cbTipoE.Size = new System.Drawing.Size(24, 20);
-            this.cbTipoE.TabIndex = 5;
-            this.cbTipoE.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.cbTipoE_CloseUp);
+            this.cbTipoE.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbTipoE.Size = new System.Drawing.Size(100, 20);
+            this.cbTipoE.TabIndex = 2;
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.EditValue = null;
+            this.dtFecha.Location = new System.Drawing.Point(119, 70);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFecha.Size = new System.Drawing.Size(112, 20);
+            this.dtFecha.TabIndex = 0;
             // 
             // frmNMVenta
             // 
@@ -159,11 +147,9 @@ namespace SimiSoft
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(658, 194);
-            this.Controls.Add(this.cbTipoE);
-            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.cbTipoE);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblFecha);
@@ -177,13 +163,14 @@ namespace SimiSoft
             this.MinimizeBox = false;
             this.Name = "frmNMVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmNMProveedor";
+            this.Text = "frmNMVenta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNMVenta_FormClosing);
             this.Load += new System.EventHandler(this.frmNMProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipoE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,10 +185,8 @@ namespace SimiSoft
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtTipo;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.DateTimePicker dtFecha;
-        private DevExpress.XtraEditors.TextEdit txtFecha;
         private DevExpress.XtraEditors.ComboBoxEdit cbTipoE;
+        private DevExpress.XtraEditors.DateEdit dtFecha;
     }
 }

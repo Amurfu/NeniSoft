@@ -78,5 +78,16 @@ namespace SimiSoft
         {
 
         }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Quiere cerrar el programa?",
+                                 "Cerrar Programa",
+                                 MessageBoxButtons.OKCancel,
+                                 MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

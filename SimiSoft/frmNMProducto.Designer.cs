@@ -100,6 +100,7 @@ namespace SimiSoft
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(85, 20);
             this.txtUnidadMedida.TabIndex = 1;
+            this.txtUnidadMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidadMedida_KeyPress);
             // 
             // labelControl4
             // 
@@ -145,6 +146,7 @@ namespace SimiSoft
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 6;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // labelControl7
             // 
@@ -210,6 +212,7 @@ namespace SimiSoft
             this.Name = "frmNMProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNMProducto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNMProducto_FormClosing);
             this.Load += new System.EventHandler(this.frmNMProducto_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
