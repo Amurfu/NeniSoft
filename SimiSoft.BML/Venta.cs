@@ -13,10 +13,15 @@ namespace SimiSoft.BML
 
         private DataAccess dataAccess = DataAccess.Instance();
         public int idVenta { get; set; }
-        public   DateTime fecha { get; set; }
-        public decimal total { get; set; }
+        public int idCliente { get; set; }
+        public DateTime fecha { get; set; }
+        public int cantidad { get; set; }
+        public decimal importe { get; set; }
         public string tipoEnvio { get; set; }
-        public bool activo { get; set; }
+        public string status { get; set; }
+
+        public decimal total { get; set; }
+        
 
         public Venta()
         {
@@ -28,35 +33,23 @@ namespace SimiSoft.BML
             parametros.Add("@fecha", fecha);
             parametros.Add("@total", total);
             parametros.Add("@tipoEnvio", tipoEnvio);
-            return dataAccess.Execute("stp_Ventas_add", parametros);
+            parametros.Add("@idCliente", idCliente);
+            parametros.Add("@cantidad", cantidad);
+            return dataAccess.Execute("stp_ventas_add", parametros);
+            
+
         }
 
-        public int Delete()
+        public void cargarId()
         {
-            var parametros = new DynamicParameters();
-            parametros.Add("@idVenta", idVenta);
-            return dataAccess.Execute("stp_Ventas_delete", parametros);
+            List<int> lst = new List<int>();
+            lst = dataAccess.Query<int>("stp_ventas_getlastid");
+            this.idVenta = lst[0];
         }
 
         public List<Venta> GetAll()
         {
-            return dataAccess.Query<Venta>("stp_Ventas_getall");
-        }
-
-        public Venta GetById()
-        {
-            var parametros = new DynamicParameters();
-            parametros.Add("@idVenta", idVenta);
-            return dataAccess.QuerySingle<Venta>("stp_ventas_getbyid", parametros);
-        }
-        public int Update()
-        {
-            var parametros = new DynamicParameters();
-            parametros.Add("@idVenta", idVenta);
-            parametros.Add("@fecha", fecha);
-            parametros.Add("@total", total);
-            parametros.Add("@tipoEnvio", tipoEnvio);
-            return dataAccess.Execute("stp_Ventas_update", parametros);
+            return dataAccess.Query<Venta>("stp_ventas_getall").ToList();
         }
     }
 }

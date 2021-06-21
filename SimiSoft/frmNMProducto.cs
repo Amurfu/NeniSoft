@@ -14,7 +14,8 @@ namespace SimiSoft
 {
     public partial class frmNMProducto : DevExpress.XtraEditors.XtraForm
     {
-        private Producto producto;
+        private Inventario producto;
+        public bool R = false;
         // cuando es nuevo producto
         public frmNMProducto()
         {
@@ -24,11 +25,10 @@ namespace SimiSoft
         public frmNMProducto(int idProducto)
         {
             InitializeComponent();
-            producto = new Producto
+            producto = new Inventario
             {
                 idProducto = idProducto
             }.GetById();
-            txtId.Text = producto.idProducto.ToString();
             txtDescripcion.Text = producto.descripcion;
             txtUnidadMedida.Text = producto.unidadMedida;
             txtCodigo.Text = producto.codigo;
@@ -43,7 +43,7 @@ namespace SimiSoft
             {
                 if (producto == null)
                 {
-                    if (new Producto
+                    if (new Inventario
                     {
                         descripcion = txtDescripcion.Text,
                         unidadMedida = txtUnidadMedida.Text,
@@ -53,6 +53,7 @@ namespace SimiSoft
                         marca = txtMarca.Text
                     }.Add() > 0)
                     {
+                        R = true;
                         XtraMessageBox.Show("Producto Insertado Correctamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -67,6 +68,7 @@ namespace SimiSoft
                     producto.marca = txtMarca.Text;
                     if (producto.Update()>0)
                     {
+                        R = true;
                         XtraMessageBox.Show("Producto Modificado Correctamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -194,14 +196,13 @@ namespace SimiSoft
 
         private void frmNMProducto_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-            if (MessageBox.Show("Desea cerrar el formulario?",
-                                 "Salir",
-                                 MessageBoxButtons.OKCancel,
-                                 MessageBoxIcon.Question) == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
+            if (R == false)
+                if (XtraMessageBox.Show("¿Desea cerrar el formulario?", "Nenisoft-NM",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
         }
     }
     }

@@ -14,7 +14,7 @@ namespace SimiSoft.DAL
         #region
         private static volatile DataAccess instance = null;
         private static readonly object padlock = new object();
-        public static string conString = "Server=.;Database=NeniDB;User id = Pancho; password=123;";
+        public static string conString = "Server=.;Database=NeniDB;User id =jose; password=jose123456;";
 
         private DataAccess(){}
         public static DataAccess Instance()

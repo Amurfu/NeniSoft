@@ -39,14 +39,18 @@ namespace SimiSoft
             this.btnProductos = new DevExpress.XtraBars.BarButtonItem();
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.sbApariencia = new DevExpress.XtraBars.SkinBarSubItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.bManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -68,9 +72,12 @@ namespace SimiSoft
             this.btnProductos,
             this.btnClientes,
             this.btnVentas,
-            this.sbApariencia});
+            this.sbApariencia,
+            this.barButtonItem1,
+            this.barSubItem2,
+            this.barButtonItem2});
             this.bManager.MainMenu = this.bar2;
-            this.bManager.MaxItemId = 7;
+            this.bManager.MaxItemId = 10;
             this.bManager.StatusBar = this.bar3;
             // 
             // bar2
@@ -80,9 +87,10 @@ namespace SimiSoft
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnArchivo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnCatalogos),
-            new DevExpress.XtraBars.LinkPersistInfo(this.sbApariencia)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.mnArchivo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.mnCatalogos, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.sbApariencia, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
@@ -93,6 +101,8 @@ namespace SimiSoft
             // 
             this.mnArchivo.Caption = "Archivo";
             this.mnArchivo.Id = 0;
+            this.mnArchivo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnArchivo.ImageOptions.SvgImage")));
+            this.mnArchivo.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.mnArchivo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.mnArchivo.Name = "mnArchivo";
@@ -102,11 +112,14 @@ namespace SimiSoft
             this.btnSalir.Caption = "Salir";
             this.btnSalir.Id = 1;
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // mnCatalogos
             // 
             this.mnCatalogos.Caption = "Catálogos";
             this.mnCatalogos.Id = 2;
+            this.mnCatalogos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnCatalogos.ImageOptions.SvgImage")));
+            this.mnCatalogos.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.mnCatalogos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProductos),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnClientes),
@@ -134,10 +147,29 @@ namespace SimiSoft
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Ventas";
+            this.barSubItem2.Id = 8;
+            this.barSubItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem2.ImageOptions.SvgImage")));
+            this.barSubItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Administrar";
+            this.barButtonItem2.Id = 9;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // sbApariencia
             // 
             this.sbApariencia.Caption = "Apariencia";
             this.sbApariencia.Id = 6;
+            this.sbApariencia.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("sbApariencia.ImageOptions.SvgImage")));
+            this.sbApariencia.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.sbApariencia.Name = "sbApariencia";
             // 
             // bar3
@@ -184,9 +216,21 @@ namespace SimiSoft
             this.barDockControlRight.Manager = this.bManager;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 232);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Ventas";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // tabMdiManager
             // 
             this.tabMdiManager.MdiParent = this;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Ventas";
+            this.barSubItem1.Id = 7;
+            this.barSubItem1.Name = "barSubItem1";
             // 
             // frmMain
             // 
@@ -233,6 +277,10 @@ namespace SimiSoft
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraBars.SkinBarSubItem sbApariencia;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager tabMdiManager;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
     }
 }
 

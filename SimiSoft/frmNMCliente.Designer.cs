@@ -38,19 +38,17 @@ namespace SimiSoft
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtId = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefono.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(274, 167);
+            this.btnGuardar.Location = new System.Drawing.Point(366, 156);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(112, 34);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -58,83 +56,78 @@ namespace SimiSoft
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(193, 167);
+            this.btnCancelar.Location = new System.Drawing.Point(231, 156);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Size = new System.Drawing.Size(112, 34);
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(348, 70);
+            this.txtTelefono.Location = new System.Drawing.Point(134, 77);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.Properties.Mask.EditMask = "(999) 000-0000";
+            this.txtTelefono.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtTelefono.Size = new System.Drawing.Size(150, 26);
+            this.txtTelefono.TabIndex = 2;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(279, 73);
+            this.labelControl4.Location = new System.Drawing.Point(28, 82);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(46, 13);
+            this.labelControl4.Size = new System.Drawing.Size(68, 19);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Teléfono:";
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(131, 70);
+            this.txtDescuento.Location = new System.Drawing.Point(459, 13);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(100, 20);
+            this.txtDescuento.Size = new System.Drawing.Size(150, 26);
             this.txtDescuento.TabIndex = 1;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(51, 73);
+            this.labelControl5.Location = new System.Drawing.Point(339, 18);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(55, 13);
+            this.labelControl5.Size = new System.Drawing.Size(79, 19);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Descuento:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(348, 19);
+            this.txtNombre.Location = new System.Drawing.Point(134, 16);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.Size = new System.Drawing.Size(150, 26);
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(279, 22);
+            this.labelControl2.Location = new System.Drawing.Point(28, 20);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(41, 13);
+            this.labelControl2.Size = new System.Drawing.Size(63, 19);
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Nombre:";
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(131, 19);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(51, 22);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(15, 13);
-            this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "ID:";
             // 
             // frmNMCliente
             // 
             this.AcceptButton = this.btnGuardar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
+            this.BackgroundImageStore = global::SimiSoft.Properties.Resources.resumen_tecnologia_digital_alta_tecnologia_hexagonos_concepto_fondo_41814_468;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(498, 218);
+            this.ClientSize = new System.Drawing.Size(628, 210);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtTelefono);
@@ -143,10 +136,9 @@ namespace SimiSoft
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNMCliente.IconOptions.Image")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNMCliente";
@@ -157,7 +149,6 @@ namespace SimiSoft
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefono.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +164,5 @@ namespace SimiSoft
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtId;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

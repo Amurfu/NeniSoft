@@ -14,11 +14,11 @@ namespace SimiSoft
 {
     public partial class frmNMCliente : DevExpress.XtraEditors.XtraForm
     {
+        public bool R = false;
         private Cliente cliente;
         public frmNMCliente()
         {
             InitializeComponent();
-            txtId.Enabled = false;
         }
 
         public frmNMCliente(int idCliente)
@@ -28,17 +28,13 @@ namespace SimiSoft
             {
                 idCliente = idCliente
             }.GetById();
-            txtId.Text = cliente.idCliente.ToString();
             txtNombre.Text = cliente.nombre;
        //     txtRazonSocial.Text = cliente.razonSocial;
             txtTelefono.Text = cliente.telefono;
             txtDescuento.Text = cliente.descuento.ToString();
         }
 
-        private void frmNMCliente_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -83,14 +79,16 @@ namespace SimiSoft
             {
                 if(cliente == null) 
                 { 
+                    
                     if (new Cliente
                     {
                         nombre = txtNombre.Text,
-                     //   razonSocial = txtRazonSocial.Text,
+                    // razonSocial = txtRazonSocial.Text,
                         telefono = txtTelefono.Text,
                         descuento = Convert.ToDecimal(txtDescuento.Text)
                     }.Add() > 0)
                     {
+                       R = true;
                         XtraMessageBox.Show("Cliente Insertado Correctamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -100,9 +98,10 @@ namespace SimiSoft
                     cliente.nombre = txtNombre.Text;
                     //cliente.razonSocial = txtRazonSocial.Text;
                     cliente.telefono = txtTelefono.Text;
-                    cliente.descuento = Convert.ToDecimal(txtDescuento.Text);
-                    if(cliente.Update() > 0)
+                    cliente.descuento = Convert.ToDecimal(txtDescuento.Text);                   
+                    if (cliente.Update() > 0)
                     {
+                        R = true;
                         XtraMessageBox.Show("Cliente Modificado Correctamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -149,17 +148,25 @@ namespace SimiSoft
                 e.Handled = true;
             }
         }
-
+        frmClientes C = new frmClientes();
+        
         private void frmNMCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (R == false)
+                if (XtraMessageBox.Show("¿Desea cerrar el formulario?", "Nenisoft-NM",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+        }
 
-            if (MessageBox.Show("Desea cerrar el formulario?",
-                                 "Salir",
-                                 MessageBoxButtons.OKCancel,
-                                 MessageBoxIcon.Question) == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
+        
+        
+
+        private void frmNMCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

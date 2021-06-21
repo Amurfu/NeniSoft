@@ -29,12 +29,16 @@ namespace SimiSoft
 					password = txtPassword.Text
 				}.Login() != null)
 				{
-					XtraMessageBox.Show("Bienvenido");
+					Misc.actualiza = true;
+					XtraMessageBox.Show("Bienvenido", "NeniDB");
 					DialogResult = DialogResult.OK;
 				}
 				else
 				{
 					XtraMessageBox.Show("Error en las credenciales");
+					txtUsuario.EditValue = null;
+					txtPassword.EditValue = null;
+					txtUsuario.Focus();
 				}
 			}
 		}
@@ -74,24 +78,18 @@ namespace SimiSoft
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-			
+			if (Misc.actualiza == false)
+				if (XtraMessageBox.Show("¿Desea cerrar el programa?", "Nenisoft",
+					MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+				{
+					e.Cancel = true;
+					return;
+				}
 		}
 
+    
      
 
-        // private void checkButton1_Click(object sender, EventArgs e)
-        //{
-        //String text = txtPassword.Text;
-        // if (checkButton1.Checked)
-        //  {
-
-        //txtPassword.Text = text;
-
-        //}
-        //else
-        //{
-        //	txtPassword.Properties.PasswordChar = '*';
-        //}
-        //}
+        
     }
 }

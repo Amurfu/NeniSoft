@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SimiSoft.BML
 {
-    public class Producto
+    public class Inventario
     {
-        private DataAccess dataAccess = DataAccess.Instance();
+        private static DataAccess dataAccess = DataAccess.Instance();
         public int idProducto { get; set; }
         public string descripcion { get; set; }
         public string unidadMedida { get; set; }
@@ -20,7 +20,9 @@ namespace SimiSoft.BML
         public string marca { get; set; }
         public bool activo { get; set; }
 
-        public Producto()
+        public int cantidad { get; set; }
+
+        public Inventario()
         {
             
         }
@@ -44,16 +46,22 @@ namespace SimiSoft.BML
             return dataAccess.Execute("stp_productos_delete", parametros);
         }
 
-        public List<Producto> GetAll()
+        public List<Inventario> GetAll()
         {
-            return dataAccess.Query<Producto>("stp_productos_getall");
+            return dataAccess.Query<Inventario>("stp_productos_getall");
         }
 
-        public Producto GetById()
+        public Inventario GetById()
         {
             var parametros = new DynamicParameters();
             parametros.Add("@idProducto", idProducto);
-            return dataAccess.QuerySingle<Producto>("stp_productos_getbyid", parametros);
+            return dataAccess.QuerySingleOrDefault<Inventario>("stp_productos_getbyid", parametros);
+        }
+        public static Inventario GetById(int codigo)
+        {
+            var parametros = new DynamicParameters();
+            parametros.Add("@idProducto", codigo);
+            return dataAccess.QuerySingleOrDefault<Inventario>("stp_productos_getbyid", parametros);
         }
 
         public int Update()

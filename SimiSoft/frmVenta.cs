@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SimiSoft
 {
-    public partial class frmVentas : DevExpress.XtraEditors.XtraForm
+    public partial class frmVenta : DevExpress.XtraEditors.XtraForm
     {
-        public frmVentas()
+        public frmVenta()
         {
             InitializeComponent();
         }
@@ -22,43 +22,35 @@ namespace SimiSoft
         private void frmProveedores_Load(object sender, EventArgs e)
         {
             ventaBindingSource.DataSource = new Venta().GetAll();
-            gvVenta.BestFitColumns();
+            gvVentas.BestFitColumns();
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frmNMVenta
-            {
-                Text = "Nueva venta"
-            }.ShowDialog();
+            new frmNMVenta().ShowDialog();
             ventaBindingSource.DataSource = new Venta().GetAll();
-            gvVenta.BestFitColumns();
+            gvVentas.BestFitColumns();
         }
 
         private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frmNMVenta((int)gvVenta.GetFocusedRowCellValue("idVenta"))
-            {
-                Text = "Modificar Venta " + (int)gvVenta.GetFocusedRowCellValue("idVenta")
-            }.ShowDialog();
-            ventaBindingSource.DataSource = new Venta().GetAll();
-            gvVenta.BestFitColumns();
+            //new frmNMVenta((int)gvVenta.GetFocusedRowCellValue("idVenta"))
+            //{
+            //    Text = "Modificar Venta " + (int)gvVenta.GetFocusedRowCellValue("idVenta")
+            //}.ShowDialog();
+            //ventaBindingSource.DataSource = new Venta().GetAll();
+            //gvVenta.BestFitColumns();
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new Venta
-            {
-                idVenta = (int)gvVenta.GetFocusedRowCellValue("idVenta")
-            }.Delete();
-            ventaBindingSource.DataSource = new Venta().GetAll();
-            gvVenta.BestFitColumns();
+          
         }
 
         private void btnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ventaBindingSource.DataSource = new Venta().GetAll();
-            gvVenta.BestFitColumns();
+            gvVentas.BestFitColumns();
         }
 
      
